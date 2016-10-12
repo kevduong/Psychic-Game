@@ -6,32 +6,63 @@ var guessesLeft = 10;
 var guesses = [];
 
 document.onkeyup = function (event) {
-    // Actions from Users & Guests
+    
+    // User & Comp Setting
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-    var compGuess = letterBank[Math.floor(Math.random()*letterBank.length)];
+    var compGuess = letterBank[Math.floor(Math.random() * letterBank.length)];
+    
+    
+        //Keycode for Alphabets
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
 
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-    //Correct Guess
-    if (userGuess == compGuess) {
-        wins++;
-        guessesLeft = 10;
-        guesses = [];
-        document.getElementById("stats").innerHTML = "<p>Wins: " + wins + "</p";
+        //Win Guess
+            if (userGuess == compGuess) {
+                
+                wins++;
+                document.getElementById("win-value").innerHTML = wins;
+                
+                guessesLeft = 10;
+                document.getElementById("guesses-value").innerHTML = guessesLeft;
+                
+                guesses = [];
+                
+                
+            //Incorrect Guess
+            }else if ((userGuess !== compGuess) && (guessesLeft > 1)) {
+                guessesLeft--;
+                document.getElementById("guesses-value").innerHTML = guessesLeft;
+                
+                guesses.push(" " + userGuess);
+                document.getElementById("lettersUsed-value").innerHTML = guesses;
+          
 
-    //Incorrect Guess
-    }else if ((userGuess !== compGuess) && (guessesLeft > 1)) {
-        guessesLeft--;
-        userGuess.push(" " + guesses);
-        document.getElementById("stats").innerHTML = "<p>Guesses Left: " + guessesLeft + "</p";
-
-    //No more guesses = Increase lose
-    }else ((userGuess !== compGuess) && (guessesLeft > -1)) {
-        losses++;
-        //Reset Guesses
-
-        document.getElementById("stats").innerHTML = "<p>Losses: " + losses + "</p";
-
+            //No more guesses = Increase lose
+            }else if ((userGuess !== compGuess) && (guessesLeft > -1)) {
+                losses++;
+                document.getElementById("lose-value").innerHTML = losses;
+                
+                guessesLeft = 10;
+                document.getElementById("guesses-value").innerHTML = guessesLeft;
+                
+                guesses= [];  
+               
+            }
         }
-    }
 };
+
+function duplicate(doubleEntry) {  
+  var i,  
+  len=doubleEntry.length,  
+  result = [],  
+  obj = {};   
+  for (i=0; i<len; i++)  
+  {  
+  obj[doubleEntry[i]]=0;  
+  }  
+  for (i in obj) {  
+  result.push(i);  
+  }  
+  return result;  
+  }  
+

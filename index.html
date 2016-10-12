@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Untitled Document</title>
+	
 
-	<meta name="Author" content=""/>
-
-	<link rel="stylesheet" type="text/css" src="style.css">
+    <title>Psychic Game</title>
 
 </head>
 
     <body>
-        <h1>The Psychic Game</h1>
-        <p>Press any letters on your keyboard to begin</p>
-        <div id="stats">
-            <p>Wins:  </p>
-            <p>Loses:  </p>
-            <p>Guesses Left:  </p>
-            <p>Letters Used: </p>
+        <div class="jumbotron">
+        <div class="container">
+            <h1>The Psychic Game</h1>
+                <div class="header-txt">
+                <p>Can you guess the letter I'm thinking of?</p>
+                <p>Press any letters on your keyboard to begin</p>
+                </div>
+        </div>
+    </div>
+         
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-success btn-lg">Wins: <p id="win-value">0</p> </button>
+                    <button class="btn btn-danger btn-lg">Losses:  <p id="lose-value">0</p> </button>
+                    <button class="btn btn-warning btn-lg">Guesses Left:  <p id="guesses-value">10</p></button>
+                
+            </div>
+        </div>
+        </div>
+           <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-info btn-lg">Letters Used:  <p id="lettersUsed-value"> </p></button>
+                </div>
+            </div>
         </div>
 
 
-    <link rel="script" type="text/javascript" src="assets/javascript/game.js">
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
     </body>
 </html>

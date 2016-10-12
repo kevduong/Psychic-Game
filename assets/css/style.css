@@ -1,0 +1,25 @@
+.jumbotron {
+    text-align: center;
+    background-image: url(../images/header-img.png);
+    opacity: .8;
+    background-position: center;
+    background-color: white;
+    padding: 100px;
+}
+
+.jumbotron h1 {
+    color: white;
+    text-shadow: 
+        5px 5px  black;
+}
+
+.jumbotron, .header-txt p{
+    color: white;
+    font-size: 25px;
+}
+
+.jumbotron .header-txt{
+    margin-top: 80px;
+    background-color: darkviolet;
+    opacity: .90;
+}
