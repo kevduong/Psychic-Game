@@ -49,20 +49,7 @@ document.onkeyup = function (event) {
                
             }
         }
+
 };
 
-function duplicate(doubleEntry) {  
-  var i,  
-  len=doubleEntry.length,  
-  result = [],  
-  obj = {};   
-  for (i=0; i<len; i++)  
-  {  
-  obj[doubleEntry[i]]=0;  
-  }  
-  for (i in obj) {  
-  result.push(i);  
-  }  
-  return result;  
-  }  
 
